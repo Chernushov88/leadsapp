@@ -8,7 +8,7 @@
                         <!-- Тайтл страницы -->
                         <div class="page-title">
                             <h1 class="text">Созданные страницы</h1>
-                        </div><!-- page-title -->
+                        </div><!-- page-  -->
                         <!-- Найденные результаты -->
                         <div class="show-result">
                             <span class="text">Всего:</span>
