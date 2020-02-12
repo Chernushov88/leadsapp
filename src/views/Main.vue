@@ -28,7 +28,7 @@
                 <div class="elements-list">
                     <div class="row">
                         <!-- Подключение компонента "Елемент списка продуктов" -->
-                        <PageCard v-for="i in '12345678'" :item="i" :key="i"/>
+                        <PageCard v-for="i in '12345678910'" :item="i" :key="i"/>
                     </div><!-- //row -->
                 </div><!-- //elements-list -->
             </div><!-- //elements-section -->

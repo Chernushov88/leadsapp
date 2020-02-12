@@ -6,6 +6,7 @@ import AppContainer from './views/AppContainer'
 import Main from './views/Main'
 import Integration from './views/Integration'
 import Statistic from './views/Statistic'
+import StatisticSpreadsheets from './views/StatisticSpreadsheets'
 import RealTime from './views/RealTime'
 import Personal from './views/Personal'
 import Plan from './views/Plan'
@@ -40,6 +41,11 @@ export default new Router({
                     path: 'statistic',
                     name: 'statistic',
                     component: Statistic
+                },
+                {
+                    path: 'statisticspreadsheets',
+                    name: 'statisticspreadsheets',
+                    component: StatisticSpreadsheets
                 },
                 {
                     path: 'realtime',

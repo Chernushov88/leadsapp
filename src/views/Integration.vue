@@ -8,7 +8,7 @@
                         <div class="page-header-info">
                             <!-- Тайтл страницы -->
                             <div class="page-title">
-                                <h1 class="text"><i class="arrow-left"></i>Доступные интеграции</h1>
+                                <h1 class="text text-arrow">Доступные интеграции</h1>
                             </div><!-- page-title -->
                         </div>
                     </div><!-- total-result -->
@@ -38,5 +38,7 @@
 </script>
 
 <style scoped>
-
+    .main-content {
+        padding-top: 3rem;
+    }
 </style>

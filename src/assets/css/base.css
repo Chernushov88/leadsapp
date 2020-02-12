@@ -22,7 +22,9 @@
     src: local("../fonts/PT_Root_UI_Bold"), local("../fonts/PT_Root_UI_Bold"), url("../fonts/PT_Root_UI_Bold.woff2") format("woff2"), url("../fonts/PT_Root_UI_Bold.woff") format("woff"), url("../fonts/PT_Root_UI_Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal; }
-
+*{
+    outline: 0px solid #000;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -1030,12 +1032,10 @@ input[type="reset"]:disabled {
 @media screen and (max-width: 1023px) {
     .main-content {
         height: auto; } }
-i.arrow-left {
-    border: solid #D3D3D3;
-    margin: 0 5px 3px 0;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 5px;
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+
+@media only screen and (min-width: 767px){
+    h1.text-arrow{
+        background: url('~@/assets/images/arrow-left.svg') no-repeat left center;
+        padding-left: 23px;
+    }
 }
