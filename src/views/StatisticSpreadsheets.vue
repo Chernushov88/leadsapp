@@ -7,14 +7,14 @@
                     <div class="page-header-info">
                         <!-- Тайтл страницы -->
                         <div class="page-title page-title-inner">
-                            <h1 class="text text-arrow">Статистика <a href="#" @click="visibleChecketPages($event)">Clothing page</a><a href="#">Форма 3</a></h1>
+                            <h1 class="text text-arrow">Статистика <a href="#">Clothing page</a><a href="#">Форма 3</a></h1>
                         </div><!-- page-title -->
                     </div>
                 </div><!-- total-result -->
                 <div class="col col-3 col-hd-desktop-4 col-mob-12">
                     <div class="catalog-view">
                         <div class="catalog-view-in">
-                            <router-link class="catalog-view__button active" :to="{name: 'statistic'}">
+                            <router-link class="catalog-view__button " :to="{name: 'statistic'}">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="8" height="8" rx="1" />
                                     <rect x="10" width="8" height="8" rx="1" />
@@ -22,14 +22,14 @@
                                     <rect y="10" width="8" height="8" rx="1" />
                                 </svg>
                             </router-link>
-                            <router-link class="catalog-view__button" :to="{name: 'statisticspreadsheets'}">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.735235 15.2209C0.32918 15.2209 0 15.5501 0 15.9562V18.3203C0 18.7264 0.32918 19.0556 0.735235 19.0556H9.19621V15.2209H0.735235Z"/>
-                                        <path d="M19.2648 15.2209H10.8179V19.0556H19.2648C19.6708 19.0556 20 18.7264 20 18.3203V15.9562C20 15.5501 19.6708 15.2209 19.2648 15.2209Z"/>
-                                        <path d="M19.2648 9.76538H10.8179V13.5994H19.2648C19.6708 13.5994 20 13.2702 20 12.8642V10.5006C20 10.0946 19.6708 9.76538 19.2648 9.76538Z"/>
-                                        <path d="M0.735235 9.76538C0.32918 9.76538 0 10.0946 0 10.5006V12.8642C0 13.2702 0.32918 13.5994 0.735235 13.5994H9.19621V9.76538H0.735235Z"/>
-                                        <path d="M19.2648 0.94458C18.6497 0.94458 1.63875 0.94458 0.735234 0.94458C0.32918 0.94458 0 1.27376 0 1.67981V7.26895C0 7.67501 0.32918 8.00419 0.735234 8.00419C1.5432 8.00419 18.4522 8.00419 19.2648 8.00419C19.6708 8.00419 20 7.67501 20 7.26895V1.67981C20 1.27376 19.6708 0.94458 19.2648 0.94458Z"/>
-                                    </svg>
+                            <router-link class="catalog-view__button active" :to="{name: 'statisticspreadsheets'}">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.735235 15.2209C0.32918 15.2209 0 15.5501 0 15.9562V18.3203C0 18.7264 0.32918 19.0556 0.735235 19.0556H9.19621V15.2209H0.735235Z"/>
+                                    <path d="M19.2648 15.2209H10.8179V19.0556H19.2648C19.6708 19.0556 20 18.7264 20 18.3203V15.9562C20 15.5501 19.6708 15.2209 19.2648 15.2209Z"/>
+                                    <path d="M19.2648 9.76538H10.8179V13.5994H19.2648C19.6708 13.5994 20 13.2702 20 12.8642V10.5006C20 10.0946 19.6708 9.76538 19.2648 9.76538Z"/>
+                                    <path d="M0.735235 9.76538C0.32918 9.76538 0 10.0946 0 10.5006V12.8642C0 13.2702 0.32918 13.5994 0.735235 13.5994H9.19621V9.76538H0.735235Z"/>
+                                    <path d="M19.2648 0.94458C18.6497 0.94458 1.63875 0.94458 0.735234 0.94458C0.32918 0.94458 0 1.27376 0 1.67981V7.26895C0 7.67501 0.32918 8.00419 0.735234 8.00419C1.5432 8.00419 18.4522 8.00419 19.2648 8.00419C19.6708 8.00419 20 7.67501 20 7.26895V1.67981C20 1.27376 19.6708 0.94458 19.2648 0.94458Z"/>
+                                </svg>
                             </router-link>
                         </div>
                         <div class="generat-report">
@@ -47,46 +47,74 @@
             <div class="elements-section">
                 <div class="elements-list">
                     <div class="row">
-                        <StatisticCard v-for="i in 12" :item="i" :key="i"/>
+                        <div class="col col-12">
+                            <div class="table-scroll">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Название страницы</th>
+                                        <th>Форма</th>
+                                        <th>Номер телефона</th>
+                                        <th><SvgIconTimeData /> Время и дата</th>
+                                        <th>Куду попала заявка</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <StatisticSpreadsheetsTable v-for="i in 15" :item="i" :key="i"/>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <StatisticCardMore />
             </div>
         </div><!-- //content -->
     </main><!-- //middle -->
 </template>
 <script>
-import StatisticCardMore from "../components/StatisticCardMore";
-import StatisticCard from "../components/StatisticCard";
-
+import StatisticSpreadsheetsTable from "../components/StatisticSpreadsheetsTable";
+import SvgIconTimeData from '@/components/svg/SvgIconTimeData'
 export default {
-    data(){
-        return{
-
-        }
-    },
     components: {
-        StatisticCard,
-        StatisticCardMore
-    },
-    methods: {
-        visibleChecketPages: function(){
-            // this.$event
-        }
+        StatisticSpreadsheetsTable,
+        SvgIconTimeData,
     }
 }
 </script>
 <style scoped>
-    @media only screen and (min-width : 1280px) {
-        .main-content {
-            /*display: flex;*/
-            /*align-items: center;*/
-        }
-    }
     .main-header .text {
         margin: 0;
         display: flex;
         flex-wrap: wrap;
+    }
+
+
+    .elements-section{
+        width: 100%;
+    }
+    .table-scroll{
+        overflow-y: scroll;
+    }
+    .table{
+        overflow: hidden;
+        min-width: 500px;
+        background: #fff;
+        border-radius: 15px 15px 0 0;
+    }
+    .table th{
+        height: 40px;
+        vertical-align: middle;
+        padding: 0 5px 0 15px;
+        text-align: left !important;
+        font-size: 14px;
+        border-top: 0;
+        border: 1px solid #E5E5E5;
+        border-top: 0;
+        color: #B6B6B6;
+    }
+    @media only screen and (max-width: 767px){
+        .table th {padding-left: 10px;}
     }
 
 </style>

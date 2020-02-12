@@ -1039,3 +1039,9 @@ input[type="reset"]:disabled {
         padding-left: 23px;
     }
 }
+.disabled{
+    background: #D0D0D0 !important;
+    border-color: #D0D0D0 !important;
+    cursor: default !important;
+    pointer-events: none;
+}

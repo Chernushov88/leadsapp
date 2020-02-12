@@ -7,5 +7,6 @@
 export default {
 }
 </script>
+<!--<style src="@/assets/less/libs.less"></style>-->
 <style src="@/assets/css/base.css"></style>
 <style src="@/assets/css/components.css"></style>

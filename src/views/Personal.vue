@@ -50,4 +50,8 @@
     .col-personal-user-email{
         width: 57%;
     }
+    @media only screen and (max-width: 767px){
+        .col-personal-user-email{display: none;}
+        .col-personal-user-name{width: 100%;}
+    }
 </style>

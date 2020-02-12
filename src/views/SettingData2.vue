@@ -7,7 +7,7 @@
                     <div class="page-header-info">
                         <!-- Тайтл страницы -->
                         <div class="page-title page-title-inner">
-                            <h1 class="text text-arrow">Тарифный план</h1>
+                            <h1 class="text text-arrow">Настройка формы</h1>
                         </div><!-- page-title -->
                     </div>
                 </div><!-- total-result -->
@@ -20,7 +20,8 @@
             <div class="elements-section">
                 <div class="elements-list">
                     <div class="row">
-                        <PlanCard v-for="i in 3" :item="i" :key="i"/>
+                        <SettingDataDefault2/>
+                        <SettingDataReceived2/>
                     </div>
                 </div>
             </div>
@@ -29,10 +30,12 @@
 </template>
 
 <script>
-import PlanCard from '../components/PlanCard'
+import SettingDataDefault2 from "../components/SettingDataDefault2";
+import SettingDataReceived2 from "../components/SettingDataReceived2";
 export default {
     components: {
-        PlanCard
+        SettingDataDefault2,
+        SettingDataReceived2
     }
 }
 </script>

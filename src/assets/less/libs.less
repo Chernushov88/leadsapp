@@ -1,0 +1,77 @@
+@asideWidth: 30px;
+@box-shadow: 0px 2px 4px 3px rgba(0, 0, 0, 0.1);
+@transition: 0.8s ease all;
+@color: #1e4464;
+@colorLight: #3578b0;
+.color-light{
+  color: @colorLight;
+}
+.scale(@m){
+	-webkit-transform: scale(@m);
+  -moz-transform: scale(@m);
+  -ms-transform: scale(@m);
+  transform: scale(@m);
+}
+.transition(@n){
+	 -webkit-transition: @n ease all;
+    -moz-transition: @n ease all;
+    -o-transition: @n ease all;
+    transition: @n ease all;
+}
+.translate(@x, @y){
+  -webkit-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y);
+  -o-transform: translate(@x, @y);
+  transform: translate(@x, @y);
+}
+.transform_rotate(@deg){
+  -moz-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  -webkit-transform: rotate(@deg); 
+  -o-transform: rotate(@deg); 
+  transform: rotate(@deg);
+}
+.filter(@px){
+  -webkit-backdrop-filter: blur(@px);
+  -moz-backdrop-filter: blur(@px);
+  -o-backdrop-filter: blur(@px);
+  -ms-backdrop-filter: blur(@px);
+  backdrop-filter: blur(@px);
+}
+.blur_text(){
+  text-shadow: 0px 0px 12px #ffffff;
+  color: rgba(255, 255, 255, 0.1);
+  opacity: 0.8;
+}
+.placeholder(@color: rgba(30,68,100,0.5)){
+    &::-webkit-input-placeholder{color: @color;} 
+    &::-moz-placeholder{color: @color;}
+    &:-moz-placeholder{color: @color;}
+    &:-ms-input-placeholder{color: @color;}
+}
+.scroll{
+  &::-webkit-scrollbar-button {
+    width: 6px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    // background: #707375;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 10px;
+    background: #8ea1b1;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(112, 115, 117, 1);
+  }
+  &::-webkit-resizer {
+    width: 5px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+  
+  

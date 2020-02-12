@@ -11,6 +11,7 @@ import RealTime from './views/RealTime'
 import Personal from './views/Personal'
 import Plan from './views/Plan'
 import SettingData from './views/SettingData'
+import SettingData2 from './views/SettingData2'
 
 Vue.use(Router)
 
@@ -56,6 +57,11 @@ export default new Router({
                     path: 'setting',
                     name: 'setting',
                     component: SettingData
+                },
+                {
+                    path: 'setting2',
+                    name: 'setting2',
+                    component: SettingData2
                 },
                 {
                     path: 'personal',
