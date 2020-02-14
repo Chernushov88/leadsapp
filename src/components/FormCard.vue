@@ -26,9 +26,13 @@
                     </div><!-- //list -->
                 </div>
                 <div class="connect">
-
-                        <SvgFormIcon />
-                   <!-- //list -->
+                    <div class="list">
+                        <SvgFormIcon
+                                v-for="(icon, index) in svgIcons"
+                                :key="index"
+                                :icon="icon"
+                        />
+                    </div><!-- //list -->
                 </div><!-- //connect -->
             </div>
 
@@ -39,6 +43,27 @@
 <script>
     import SvgFormIcon from '../components/svg/SvgFormIcon'
     export default {
+        data(){
+            return{
+                svgIcons: [
+                    {
+                        type: 'telegram',
+                        active: true,
+                        name: 'telegram'
+                    },
+                    {
+                        type: 'messege',
+                        active: true,
+                        name: 'messege'
+                    },
+                    {
+                        type: 'paper',
+                        active: true,
+                        name: 'paper'
+                    },
+                ],
+            }
+        },
         components: {
             SvgFormIcon
         }

@@ -17,10 +17,10 @@
                 <div class="element-cart-content-info">
                     <div class="list">
                         <div class="item">
-                            <a href="#" class="link">
+                            <router-link class="link" :to="{name: 'forms'}">
                                 <span class="quantity">25</span>
                                 <span class="text">форм</span>
-                            </a>
+                            </router-link>
                         </div>
                         <div class="item">
                             <a href="#" class="link">

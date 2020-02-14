@@ -22,6 +22,15 @@
     src: local("../fonts/PT_Root_UI_Bold"), local("../fonts/PT_Root_UI_Bold"), url("../fonts/PT_Root_UI_Bold.woff2") format("woff2"), url("../fonts/PT_Root_UI_Bold.woff") format("woff"), url("../fonts/PT_Root_UI_Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal; }
+@font-face {
+    font-family: 'SolomonSansSemiBold';
+    src: url('../fonts/SolomonSansSemiBold/SolomonSansSemiBold.eot');
+    src: url('../fonts/SolomonSansSemiBold/SolomonSansSemiBold.eot') format('embedded-opentype'),
+    url('../fonts/SolomonSansSemiBold/SolomonSansSemiBold.woff2') format('woff2'),
+    url('../fonts/SolomonSansSemiBold/SolomonSansSemiBold.woff') format('woff'),
+    url('../fonts/SolomonSansSemiBold/SolomonSansSemiBold.ttf') format('truetype'),
+    url('../fonts/SolomonSansSemiBold/SolomonSansSemiBold.svg#SolomonSansSemiBold') format('svg');
+}
 *{
     outline: 0px solid #000;
 }
@@ -1037,13 +1046,15 @@ input[type="reset"]:disabled {
 @media screen and (max-width: 1023px) {
     .main-content {
         height: auto; } }
-
+h1.text-arrow .arrow{
+    display: none;}
 @media only screen and (min-width: 767px){
     h1.text-arrow{
         position: relative;
         padding-left: 23px;
     }
     h1.text-arrow .arrow{
+        dominant-baseline: ;
         position: absolute;
         left: 0;
         top: 50%;

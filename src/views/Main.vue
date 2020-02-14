@@ -1,13 +1,13 @@
 <template>
     <main class="main">
         <!-- Заголовок страницы и фильтрация контента -->
-        <header class="main-header">
+        <header v-if="!activePreloader" class="main-header">
             <div class="row">
                 <div class="col col-9 col-hd-desktop-8 col-mob-12">
                     <div class="page-header-info">
                         <!-- Тайтл страницы -->
                         <div class="page-title">
-                            <h1 class="text">Созданные страницы</h1>
+                            <h1 @click="activePreloader = !activePreloader" class="text" >Созданные страницы</h1>
                         </div><!-- page-  -->
                         <!-- Найденные результаты -->
                         <div class="show-result">
@@ -24,7 +24,7 @@
         </header><!-- //section-header -->
         <div class="main-content">
             <!-- Найденные елементы  -->
-            <div class="elements-section">
+            <div  v-if="!activePreloader" class="elements-section">
                 <div class="elements-list">
                     <div class="row">
                         <!-- Подключение компонента "Елемент списка продуктов" -->
@@ -32,18 +32,32 @@
                     </div><!-- //row -->
                 </div><!-- //elements-list -->
             </div><!-- //elements-section -->
+            <Preloader  v-if="activePreloader " />
+
+
         </div><!-- //content -->
+
     </main><!-- //middle -->
 </template>
 <script>
     import SelectFilter from '../components/SelectFilter'
     import PageCard from '../components/PageCard'
+    import Preloader from '../components/Preloader'
     export default {
+        data(){
+            return{
+                activePreloader: false,
+            }
+        },
         components: {
             SelectFilter,
-            PageCard
+            PageCard,
+            Preloader,
         }
     }
 </script>
 <style scoped>
+    .main-header .text {
+        display: inline-block;
+    }
 </style>

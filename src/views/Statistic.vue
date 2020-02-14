@@ -18,7 +18,7 @@
                                 <div class="modal-in">
                                     <div class="select-pages">Выберите страницу</div>
                                     <ul class="list">
-                                        <li class="active"><a href="#">Clothing page</a></li>
+                                        <li><a href="#" class="active">Clothing page</a></li>
                                         <li><a href="#">Тестовая страница</a></li>
                                         <li><a href="#">Test 2</a></li>
                                         <li><a href="#">Для online-школы</a></li>
@@ -73,10 +73,9 @@
                 <div class="elements-list">
                     <div class="row" v-if="currentTab == 'Tab'">
                         <StatisticCard
-                            v-for="icon in svgIcons" :key="icon.type" :icon="icon"
-                        />
-                        <StatisticCard
-                                v-for="icon in svgIcons" :key="icon.type" :icon="icon"
+                            v-for="(icon, index) in svgIcons"
+                            :key="index"
+                            :icon="icon"
                         />
                     </div>
                     <div class="row" v-if="currentTab == 'Tab2'">
@@ -93,8 +92,10 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <StatisticTable
-                                        v-for="icon in svgIcons" :key="icon.type" :icon="icon"
+                                    <StatisticTableRow
+                                        v-for="(icon, index) in svgIcons"
+                                        :key="index"
+                                        :icon="icon"
                                     />
                                     </tbody>
                                 </table>
@@ -111,44 +112,16 @@
 <script>
 import StatisticCardMore from "../components/StatisticCardMore";
 import StatisticCard from "../components/StatisticCard";
-import StatisticTable from "../components/StatisticTable";
+import StatisticTableRow from "../components/StatisticTableRow";
 import SvgIconTimeData from '@/components/svg/SvgIconTimeData'
+
 export default {
+
     data(){
         return{
             currentTab: 'Tab',
             activeLink: 1,
             svgIcons: [
-                {
-                    type: 'telegram',
-                    active: true,
-                    name: 'telegram'
-                },
-                {
-                    type: 'messege',
-                    active: true,
-                    name: 'messege'
-                },
-                {
-                    type: 'paper',
-                    active: true,
-                    name: 'paper'
-                },
-                {
-                    type: 'telegram',
-                    active: true,
-                    name: 'telegram'
-                },
-                {
-                    type: 'messege',
-                    active: true,
-                    name: 'messege'
-                },
-                {
-                    type: 'paper',
-                    active: true,
-                    name: 'paper'
-                },
                 {
                     type: 'telegram',
                     active: true,
@@ -171,12 +144,16 @@ export default {
     components: {
         StatisticCard,
         StatisticCardMore,
-        StatisticTable,
-        SvgIconTimeData,
-    }
+        StatisticTableRow,
+        SvgIconTimeData
+    },
+
 }
 </script>
 <style scoped lang="less">
+    .main-content{
+        padding-top: 13px;
+    }
     @media only screen and (min-width : 1280px) {
         .main-content {
             /*display: flex;*/
@@ -204,6 +181,7 @@ export default {
         justify-content: space-between;
         box-shadow: 0 20px 30px rgba(0, 0, 0, 0);
         transition: all 0.2s ease-in-out;
+        box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.18);
         &.active{
             display: flex;
         }
@@ -227,6 +205,7 @@ export default {
         }
         .select-pages{
             margin-bottom: 15px;
+            font-size: 15px;
             color: #B6B6B6;
         }
         .list{
@@ -235,29 +214,33 @@ export default {
             li{
                 position: relative;
                 margin: 0 0 5px 0;
-                padding: 5px 0 5px 25px;
-                font-family: 'PT_Root_UI_Medium';
-                font-size: 16px;
-                &.active, &:hover{
-                    &:before{
-                        width: 8px;
-                        height: 8px;
-                        border: 4px solid #00ACDC;
-                    }
-                }
-                &:before{
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    transform: translate(0, -50%);
-                    width: 16px;
-                    height: 16px;
-                    background: #E4E4E4;
-                    border-radius: 50%;
-                }
+                padding: 0;
+                &:before{display: none;}
                 a{
-                    &:before{display: none;}
+                    display: block;
+                    padding: 5px 0 5px 25px;
+                    font-family: 'PT_Root_UI_Medium';
+                    font-size: 16px;
+
+                    &.active, &:hover{
+                        &:before{
+                            width: 8px;
+                            height: 8px;
+                            border: 4px solid #00ACDC;
+                        }
+                    }
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        width: 16px;
+                        height: 16px;
+                        background: #E4E4E4;
+                        border-radius: 50%;
+                        border: 0;
+                    }
                 }
             }
         }

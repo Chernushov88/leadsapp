@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'SolomonSansSemiBold';
+    src: url('fonts/SolomonSansSemiBold.eot');
+    src: url('fonts/SolomonSansSemiBold.eot') format('embedded-opentype'),
+         url('fonts/SolomonSansSemiBold.woff2') format('woff2'),
+         url('fonts/SolomonSansSemiBold.woff') format('woff'),
+         url('fonts/SolomonSansSemiBold.ttf') format('truetype'),
+         url('fonts/SolomonSansSemiBold.svg#SolomonSansSemiBold') format('svg');
+}

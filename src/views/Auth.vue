@@ -1,13 +1,17 @@
 <template>
-    <div>Страница авторизации</div>
-</template>
 
+
+        <AuthPage />
+
+</template>
 <script>
+    import AuthPage from '../components/AuthPage'
 export default {
-    components: {}
+    components: {
+        AuthPage
+    }
 }
 </script>
-
-<style scoped>
+<style scoped lang="less">
 
 </style>

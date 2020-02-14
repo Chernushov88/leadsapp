@@ -60,7 +60,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <StatisticTable v-for="i in 15" :item="i" :key="i"/>
+                                    <StatisticTableRow v-for="i in 15" :item="i" :key="i"/>
                                     </tbody>
                                 </table>
                             </div>
@@ -73,11 +73,11 @@
     </main><!-- //middle -->
 </template>
 <script>
-import StatisticTable from "../components/StatisticTable";
+import StatisticTableRow from "../components/StatisticTableRow";
 import SvgIconTimeData from '@/components/svg/SvgIconTimeData'
 export default {
     components: {
-        StatisticTable,
+        StatisticTableRow,
         SvgIconTimeData,
     }
 }
@@ -88,8 +88,6 @@ export default {
         display: flex;
         flex-wrap: wrap;
     }
-
-
     .elements-section{
         width: 100%;
     }
@@ -116,5 +114,4 @@ export default {
     @media only screen and (max-width: 767px){
         .table th {padding-left: 10px;}
     }
-
 </style>

@@ -26,7 +26,9 @@
                 <div class="elements-list">
                     <div class="row">
                         <FormCard
-                                v-for="icon in svgIcons" :key="icon.type" :icon="icon"
+                                v-for="(icon, index) in svgIcons"
+                                :key="index"
+                                :icon="icon"
                         />
                     </div>
                 </div>
@@ -56,37 +58,7 @@
                         type: 'paper',
                         active: true,
                         name: 'paper'
-                    },
-                    {
-                        type: 'telegram',
-                        active: true,
-                        name: 'telegram'
-                    },
-                    {
-                        type: 'messege',
-                        active: true,
-                        name: 'messege'
-                    },
-                    {
-                        type: 'paper',
-                        active: true,
-                        name: 'paper'
-                    },
-                    {
-                        type: 'telegram',
-                        active: true,
-                        name: 'telegram'
-                    },
-                    {
-                        type: 'messege',
-                        active: true,
-                        name: 'messege'
-                    },
-                    {
-                        type: 'paper',
-                        active: true,
-                        name: 'paper'
-                    },
+                    }
                 ]
             }
         },

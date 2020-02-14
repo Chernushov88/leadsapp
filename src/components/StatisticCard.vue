@@ -11,14 +11,17 @@
             </div>
             <div class="element-cart-content">
                 <ul class="element-cart-content-info">
-                    <li class="phone"><h3>+7 932 849-89-95</h3></li>
+                    <li class="phone"><h3><span>+7 932 849-89-95</span></h3></li>
                     <li class="time"><h6>13:02:34:35</h6>   <span>11.01.2018</span></li>
                 </ul>
                 <div class="connect">
                     <div class="list">
                         <div class="item active">
                             <a href="#" class="link">
-                                <svg v-if="icon.type === 'telegram'" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg
+                                    @click="isModalVisible = true"
+                                    v-if="icon.type === 'telegram'"
+                                    width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0)">
                                         <path d="M6.278 10.1206L6.01333 13.8433C6.392 13.8433 6.556 13.6806 6.75266 13.4853L8.528 11.7886L12.2067 14.4826C12.8813 14.8586 13.3567 14.6606 13.5387 13.8619L15.9533 2.54728L15.954 2.54661C16.168 1.54928 15.5933 1.15928 14.936 1.40394L0.742663 6.83794C-0.226003 7.21394 -0.211337 7.75394 0.577996 7.99861L4.20666 9.12728L12.6353 3.85328C13.032 3.59061 13.3927 3.73594 13.096 3.99861L6.278 10.1206Z" fill="#039BE5"/>
                                     </g>
@@ -46,18 +49,36 @@
             </div>
 
         </div>
+        <BaseModal
+            v-if="isModalVisible"
+            @close="isModalVisible = false">
+            <!--
+              you can use custom content here to overwrite
+              default content
+            -->
+            <h3 slot="header" style="text-align: center;">Email-интеграция <a href="#">Форма 5</a></h3>
+            <div slot="body" >
+                <p class="text">Укажите почту на которую будут приходить заявки</p>
+                <input type="text" placeholder="Введите email" class="email">
+            </div>
+            <a slot="footer" href="#" class="btn">Включить</a>
+        </BaseModal>
     </div>
 </template>
 
 <script>
+    import BaseModal from '../components/BaseModal'
     export default {
         data() {
             return {
-
+                isModalVisible: false,
             }
         },
         props: {
             icon: Object
+        },
+        components: {
+            BaseModal
         }
     }
 </script>
