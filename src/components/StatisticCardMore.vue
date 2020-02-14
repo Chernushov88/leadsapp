@@ -27,7 +27,7 @@
 <style scoped lang="less">
     .elements-section-more{
         display: flex;
-        margin: 0;
+        margin: 0 0 30px 0;
         padding: 1px;
         text-align: center;
         align-items: center;

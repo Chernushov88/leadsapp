@@ -998,6 +998,11 @@ input[type="reset"]:disabled {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+.main-header .text {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
 @media screen and (max-width: 1023px) {
     .main-header .page-title {
         margin-right: 15px; } }
@@ -1035,8 +1040,17 @@ input[type="reset"]:disabled {
 
 @media only screen and (min-width: 767px){
     h1.text-arrow{
-        background: url('~@/assets/images/arrow-left.svg') no-repeat left center;
+        position: relative;
         padding-left: 23px;
+    }
+    h1.text-arrow .arrow{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    h1.text-arrow .arrow:hover path{
+        fill:  #00ACDC;
     }
 }
 .disabled{

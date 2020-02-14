@@ -163,6 +163,7 @@ export default {
 
     .sidebar .profile-content {
         height: calc(100vh - 101px);
+        /*min-height: 560px;*/
         overflow: hidden;
         overflow-y: auto;
         display: -webkit-box;

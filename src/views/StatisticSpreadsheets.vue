@@ -60,7 +60,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <StatisticSpreadsheetsTable v-for="i in 15" :item="i" :key="i"/>
+                                    <StatisticTable v-for="i in 15" :item="i" :key="i"/>
                                     </tbody>
                                 </table>
                             </div>
@@ -73,11 +73,11 @@
     </main><!-- //middle -->
 </template>
 <script>
-import StatisticSpreadsheetsTable from "../components/StatisticSpreadsheetsTable";
+import StatisticTable from "../components/StatisticTable";
 import SvgIconTimeData from '@/components/svg/SvgIconTimeData'
 export default {
     components: {
-        StatisticSpreadsheetsTable,
+        StatisticTable,
         SvgIconTimeData,
     }
 }

@@ -6,12 +6,12 @@ import AppContainer from './views/AppContainer'
 import Main from './views/Main'
 import Integration from './views/Integration'
 import Statistic from './views/Statistic'
-import StatisticSpreadsheets from './views/StatisticSpreadsheets'
 import RealTime from './views/RealTime'
 import Personal from './views/Personal'
 import Plan from './views/Plan'
 import SettingData from './views/SettingData'
 import SettingData2 from './views/SettingData2'
+import Forms from './views/Forms'
 
 Vue.use(Router)
 
@@ -44,11 +44,6 @@ export default new Router({
                     component: Statistic
                 },
                 {
-                    path: 'statisticspreadsheets',
-                    name: 'statisticspreadsheets',
-                    component: StatisticSpreadsheets
-                },
-                {
                     path: 'realtime',
                     name: 'real-time',
                     component: RealTime
@@ -72,6 +67,11 @@ export default new Router({
                     path: 'plan',
                     name: 'plan',
                     component: Plan
+                },
+                {
+                    path: 'forms',
+                    name: 'forms',
+                    component: Forms
                 }
             ]
         }
